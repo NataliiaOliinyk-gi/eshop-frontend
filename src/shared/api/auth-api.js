@@ -2,8 +2,13 @@ import backendInstance from "./backendInstance";
 
 import requestDecorator from "./requestDecorator";
 
-export const registerUser = requestDecorator(async payload => {
+export const registerUserApi = requestDecorator(async payload => {
     const { data } = await backendInstance.post("/auth/register", payload);
+    return data;
+});
+
+export const loginUserApi = requestDecorator(async payload => {
+    const { data } = await backendInstance.post("/auth/login", payload);
     return data;
 });
 

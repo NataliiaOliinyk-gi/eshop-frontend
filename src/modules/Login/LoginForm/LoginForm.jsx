@@ -9,7 +9,7 @@ import fields from "./fields";
 import { formWrapperStyle, inputFormStyle } from "./styles"
 
 
-const RegisterForm = ({ submitForm }) => {
+const LoginForm = ({ submitForm }) => {
 
     const {
         register,
@@ -25,7 +25,6 @@ const RegisterForm = ({ submitForm }) => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} css={formWrapperStyle}>
-            
             <TextField css={inputFormStyle}
                 {...fields.email}
                 register={register}
@@ -38,10 +37,10 @@ const RegisterForm = ({ submitForm }) => {
             />
 
             <div>
-                <Button>Зарегистрироваться</Button>
+                <Button>Войти</Button>
             </div>
         </form>
     )
 };
 
-export default RegisterForm;
+export default LoginForm;

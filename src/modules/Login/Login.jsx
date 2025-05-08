@@ -6,27 +6,25 @@ import SectionTitle from "../../shared/components/SectionTitle/SectionTitle";
 import Loader from "../../shared/components/Loader/Loader";
 import LoadingError from "../../shared/components/LoadingError/LoadingError";
 
-import RegisterForm from "./RegisterForm/RegisterForm";
+import LoginForm from "./LoginForm/LoginForm"
 
-import { registerUser } from "../../redux/auth/auth-thunks";
+import { loginUser } from "../../redux/auth/auth-thunks";
 import { selectAuthRequestData } from "../../redux/auth/auth-selectors";
 
-const Register = () => {
+const Login = () => {
 
     const dispatch = useDispatch();
-    const { loading, error, success } = useSelector(selectAuthRequestData);
+    const { loading, error } = useSelector(selectAuthRequestData);
 
     const submitForm = async payload => {
-        dispatch(registerUser(payload))
+        dispatch(loginUser(payload))
     }
-    
-    if (success) return <Navigate to="/login" />
 
     return (
         <section>
             <Container>
-                <SectionTitle title="Регистрация" />
-                <RegisterForm submitForm={submitForm} />
+                <SectionTitle title="Вход" />
+                <LoginForm submitForm={submitForm} />
                 <Loader loading={loading} />
                 {error && <LoadingError>{error}</LoadingError>}
             </Container>
@@ -34,4 +32,4 @@ const Register = () => {
     )
 };
 
-export default Register;
+export default Login;
