@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
 
 import Container from "../layout/Container/Container";
 import SectionTitle from "../../shared/components/SectionTitle/SectionTitle";

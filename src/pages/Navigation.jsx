@@ -10,6 +10,8 @@ import ContactsPage from "./ContactsPage/ContactsPage";
 import ProtectedRoute from "../shared/components/ProtectedRoute/ProtectedRoute";
 import PublicRoute from "../shared/components/PublicRoute/PublicRoute";
 
+import NotFoundPage from "./NotFoundPage/NotFoundPage";
+
 const Navigation = () => {
     return (
         <Routes>
@@ -23,6 +25,7 @@ const Navigation = () => {
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/logout" element={<LogoutPage />} />
             </Route>
+            <Route path="*" element={<NotFoundPage />} />
         </Routes>
     )
 };
